@@ -11,8 +11,6 @@ public class EstatusEnvio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEstatusEnvio;
 
-    @Column(nullable = false)
+    @Column(name = "estatus") 
     private String estatusEnvio; 
-
-    public EstatusEnvio() {}    
 }

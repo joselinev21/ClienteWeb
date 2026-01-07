@@ -14,6 +14,7 @@ public class Colaborador {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    @Column(name = "noPersonal") 
     private String numeroPersonal;
 
     public Colaborador() {}

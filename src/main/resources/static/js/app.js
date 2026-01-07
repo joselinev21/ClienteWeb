@@ -1,4 +1,4 @@
-const URL_API = "http://localhost:8080/APIRestPaqueteria/api/";
+const URL_API = "http://localhost:8085/APIRestPaqueteria/api/";
 
 async function buscarEnvio() {
     const inputGuia = document.getElementById('inputGuia');

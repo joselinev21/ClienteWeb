@@ -7,7 +7,6 @@ import lombok.Data;
 @Entity
 @Table(name = "envio")
 public class Envio {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idEnvio")
@@ -31,36 +30,11 @@ public class Envio {
     @Column(name = "numeroDestino")
     private String numeroDestino;
 
-    @Column(name = "idCliente")
-    private Integer idCliente;
-
-    @Column(name = "idSucursal")
-    private Integer idSucursal;
-
-    @Column(name = "idConductor")
-    private Integer idConductor;
-
-    @Column(name = "idColoniaDestino")
-    private Integer idColoniaDestino;
-    
-    @Transient 
-    private Integer codigoPostal;
-
-    @Transient
-    private String ciudad;
-
-    @Transient
-    private String estado;
-
-    @Transient
-    private String telefono;
-
-    @Transient
-    private String correo;
-
-    @Transient
-    private String nombreSucursal;
-
+    // Relación para que NO salga vacío el historial o estatus
     @Transient
     private String status;
+
+    // Relación para que se vean los paquetes en la lista
+    @OneToMany(mappedBy = "envio")
+    private java.util.List<Paquete> paquetes;
 }
