@@ -19,10 +19,9 @@ public class Paquete {
     private Double ancho;
     private Double profundidad;
 
-    // Relación con el Envío
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idEnvio") // Nombre de la llave foránea en tu tabla MySQL
-    @JsonBackReference // Evita bucles infinitos al convertir a JSON
+    @JoinColumn(name = "idEnvio") 
+    @JsonBackReference 
     private Envio envio;
 
     public Paquete() {}
